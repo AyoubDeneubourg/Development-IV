@@ -1,11 +1,12 @@
-package Patterns.Observer.Supply;
+package Patterns.Observer;
 
-import Interfaces.Supply.SupplySubject;
+import Interfaces.Observer;
+import Interfaces.Subject;
 import Models.*;
 
 import java.util.ArrayList;
 
-public class SupplyObserver implements Interfaces.Supply.SupplyObserver {
+public class SupplyObserver implements Observer {
 
 
     private ArrayList<Croissant> stockCroissant;
@@ -17,9 +18,9 @@ public class SupplyObserver implements Interfaces.Supply.SupplyObserver {
 
     private int observerID;
 
-    private SupplySubject supplyGrabber;
+    private Subject supplyGrabber;
 
-    public SupplyObserver(SupplySubject stockGrabber){
+    public SupplyObserver(Subject stockGrabber){
 
         this.supplyGrabber = stockGrabber;
         this.observerID = ++observerIDTracker;

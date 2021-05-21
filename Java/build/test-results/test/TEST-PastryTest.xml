@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PastryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-21T13:38:21" hostname="DESKTOP-3IPGO8N" time="0.027">
+<testsuite name="PastryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-21T15:50:53" hostname="DESKTOP-3IPGO8N" time="0.039">
   <properties/>
-  <testcase name="sellPastry()" classname="PastryTest" time="0.027"/>
+  <testcase name="sellPastry()" classname="PastryTest" time="0.039"/>
   <system-out><![CDATA[New Observer 1
 1
 Stock Croissant: [Croissant 1, Croissant 2, Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9]

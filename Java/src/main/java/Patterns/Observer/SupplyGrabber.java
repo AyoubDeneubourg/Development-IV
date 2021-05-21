@@ -1,14 +1,14 @@
-package Patterns.Observer.Supply;
+package Patterns.Observer;
 
-import Interfaces.Supply.SupplyObserver;
-import Interfaces.Supply.SupplySubject;
+import Interfaces.Observer;
+import Interfaces.Subject;
 import Models.*;
 import java.lang.Double;
 
 import java.util.ArrayList;
-public class SupplyGrabber implements SupplySubject {
+public class SupplyGrabber implements Subject {
 
-    private ArrayList<SupplyObserver> observers;
+    private ArrayList<Observer> observers;
 
     private ArrayList<Croissant> stockCroissant;
     private ArrayList<Bread> stockBread;
@@ -21,7 +21,7 @@ public class SupplyGrabber implements SupplySubject {
     public SupplyGrabber() {
 
         wallet = new Wallet();
-        observers = new ArrayList<SupplyObserver>();
+        observers = new ArrayList<Observer>();
         stockCroissant = new ArrayList<Croissant>();
         stockBread = new ArrayList<Bread>();
         stockCookie = new ArrayList<Cookie>();
@@ -29,14 +29,14 @@ public class SupplyGrabber implements SupplySubject {
     }
 
     @Override
-    public void register(SupplyObserver newObserver) {
+    public void register(Observer newObserver) {
     observers.add(newObserver);
 
     }
 
 
     @Override
-    public void unregister(SupplyObserver deleteObserver) {
+    public void unregister(Observer deleteObserver) {
         int observerIndex = observers.indexOf(deleteObserver);
         System.out.println("Observer" + (observerIndex + 1) + "is deleted." );
 
@@ -46,7 +46,7 @@ public class SupplyGrabber implements SupplySubject {
     @Override
     public void notifyObserver() {
 
-        for (SupplyObserver observer: observers) {
+        for (Observer observer: observers) {
             observer.update(stockCroissant, stockBread, stockCookie, wallet);
         }
 

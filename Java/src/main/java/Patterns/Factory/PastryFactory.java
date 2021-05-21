@@ -1,8 +1,8 @@
 package Patterns.Factory;
 
 import Models.*;
-import Patterns.Observer.Supply.SupplyGrabber;
-import Patterns.Observer.Supply.SupplyObserver;
+import Patterns.Observer.SupplyGrabber;
+import Patterns.Observer.SupplyObserver;
 
 import java.util.ArrayList;
 import java.util.List;
