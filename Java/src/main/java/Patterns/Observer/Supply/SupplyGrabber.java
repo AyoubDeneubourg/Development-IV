@@ -19,8 +19,8 @@ public class SupplyGrabber implements SupplySubject {
     private Wallet wallet;
 
     public SupplyGrabber() {
-        wallet = new Wallet();
 
+        wallet = new Wallet();
         observers = new ArrayList<SupplyObserver>();
         stockCroissant = new ArrayList<Croissant>();
         stockBread = new ArrayList<Bread>();
