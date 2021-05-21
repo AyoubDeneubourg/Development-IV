@@ -1,9 +1,12 @@
 package Models;
 
+import java.util.ArrayList;
+
 public class Client {
 
     private String name;
     private Wallet wallet = new Wallet();
+    private ArrayList<Pastry> purchasedItems = new ArrayList<Pastry>();
 
     public void setName(String name) {
         this.name = name;
@@ -20,8 +23,13 @@ public class Client {
         return wallet;
     }
 
+
+    public void buyPastry(Pastry pastry) {
+        this.purchasedItems.add(pastry);
+    }
+
     @Override
     public String toString() {
-        return name + " has " + String.format("%.2f", wallet.getAmount()) + " in his wallet";
+        return name + " has " + String.format("%.2f", wallet.getAmount()) + " in his wallet. He bought also " + purchasedItems;
     }
 }

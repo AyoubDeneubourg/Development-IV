@@ -32,6 +32,7 @@ public class SupplyObserver implements Observer {
 
 
 
+
     public void update(ArrayList<Croissant> stockCroissant, ArrayList<Bread> stockBread, ArrayList<Cookie> stockCookie, Wallet wallet) {
 
         this.wallet = wallet;
@@ -43,11 +44,13 @@ public class SupplyObserver implements Observer {
 
     }
 
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
 
     public void printThePrices(){
 
-        System.out.println(observerID + "\nStock Croissant: " + stockCroissant + "\nStock Bread: " +
-                stockBread + "\nStock Cookie:" + stockCookie + "\nBakery wallet has " + String.format("%.2f", wallet.getAmount())) ;
+        System.out.println(ANSI_YELLOW + observerID  +"\n" + ANSI_YELLOW + "Stock Croissant: " + stockCroissant + "\n" +  ANSI_YELLOW +"Stock Bread: " +
+                stockBread + "\n" +  ANSI_YELLOW + "Stock Cookie:" + stockCookie + "\n" + ANSI_YELLOW + "Bakery wallet has " + String.format("%.2f", wallet.getAmount()) ) ;
 
     }
 

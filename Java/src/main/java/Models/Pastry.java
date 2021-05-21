@@ -4,14 +4,14 @@ public class Pastry {
 
 
     private String name;
-    private double sellPrice;
+    private  double sellPrice;
     private String sound;
-    private double cost;
+    private  double cost;
 
     public void setCost(double cost) {
         this.cost = cost;
     }
-    public double getCost() {
+    public  double getCost() {
         return cost;
     }
 
@@ -26,7 +26,7 @@ public class Pastry {
     public void setPrice(double sellPrice) {
         this.sellPrice = sellPrice;
     }
-    public double getPrice() {
+    public  double getPrice() {
         return sellPrice;
     }
 

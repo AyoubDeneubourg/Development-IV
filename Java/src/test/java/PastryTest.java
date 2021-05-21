@@ -19,30 +19,50 @@ public class PastryTest {
     @Test
     public void makePastry() {
 
-        pastryFactory.makePastry("Croissant", 9);
-        pastryFactory.makePastry("Bread", 5);
+        pastryFactory.makePastry("Croissant", 10);
+        pastryFactory.makePastry("Bread", 10);
         pastryFactory.makePastry("Cookie", 10);
+        // - 10.50
 
         assertThrows(IllegalArgumentException.class, () -> pastryFactory.makePastry("Spaghetti", 5));
     }
+/*
+    0.90 0.15
+    1.80 0.70
+    1.20 0.20
+*/
 
     @Test
     public void sellPastry() {
         makePastry();
         Client client = new Client();
         client.setName("Dirk");
-        client.setWalletAmount(25);
+        client.setWalletAmount(5);
 
-        pastryFactory.sellPastry("Croissant", 5, client);
-        pastryFactory.sellPastry("Bread", 4, client);
-        pastryFactory.sellPastry("Cookie", 8, client);
+        pastryFactory.sellPastry("Croissant", 2, client);
+        pastryFactory.sellPastry("Bread", 1, client);
 
         System.out.println(client);
+
+
+
+        Client clientTwo = new Client();
+        clientTwo.setName("Ayoub");
+        clientTwo.setWalletAmount(5);
+
+        pastryFactory.sellPastry("Croissant", 1, clientTwo);
+        pastryFactory.sellPastry("Cookie", 1, clientTwo);
+        pastryFactory.sellPastry("Bread", 3, clientTwo);
+
+
+        System.out.println(client);
+        System.out.println(clientTwo);
+
+
 
     }
 
 
-    // add pain o chocolo
     // strategy if possible
     // add individual client
     // warning when you sell more than in stock

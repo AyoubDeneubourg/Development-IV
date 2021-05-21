@@ -20,9 +20,5 @@ public class Main {
 
 
 //Singleton: Bakery =>
-
-
 //factory: products: bread, croissants, ...
-
-
 //observer: stock
