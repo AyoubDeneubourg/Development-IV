@@ -5,4 +5,5 @@ const croissant = function ({ price, costPrice, sound, weight }) {
     this.weight = weight;
 };
 
-module.exports = croissant;
+//module.exports = croissant;
+export default croissant;

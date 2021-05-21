@@ -1,26 +1,24 @@
-const pastryFactory = require("./factory/pastryFactory");
+//const pastryFactory = require("./factory/pastryFactory");
 
-const myCroissant = pastryFactory.createPastry("croissant", {
-    price: 1.10,
-    costPrice: 0.20,
-    sound: "test1",
-    weight: 30
+import pastryFactory from "./factory/pastryFactory.js";
+import properties from "./factory/properties.js";
+
+let croissant = document.getElementById('croissant');
+let bread = document.getElementById('bread');
+let cookie = document.getElementById('cookie');
+let submitButton = document.getElementById('submit-button');
+
+function bakePastries(amountOfCroissants, amountOfBreads, amountOfCookies) {
+
+    pastryFactory.createPastry("croissant", amountOfCroissants, properties.getProperties("croissant"));
+    pastryFactory.createPastry("bread", amountOfBreads, properties.getProperties("bread"));
+    pastryFactory.createPastry("cookie", amountOfCookies, properties.getProperties("cookie"));
+
+}
+
+submitButton.addEventListener('click', () => {
+    let amountOfCroissants = croissant.value;
+    let amountOfBreads = bread.value;
+    let amountOfCookies = cookie.value;
+    bakePastries(amountOfCroissants, amountOfBreads, amountOfCookies);
 });
-
-const myCookie = pastryFactory.createPastry("cookie", {
-    price: 1.80,
-    costPrice: 0.110,
-    sound: "test2",
-    weight: 15
-});
-
-const myBread = pastryFactory.createPastry("bread", {
-    price: 1.80,
-    costPrice: 0.30,
-    sound: "test3",
-    weight: 50
-});
-
-console.log(myCroissant);
-console.log(myCookie);
-console.log(myBread);

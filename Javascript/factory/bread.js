@@ -5,4 +5,5 @@ const bread = function ({ price, costPrice, sound, weight }) {
     this.weight = weight;
 };
 
-module.exports = bread;
+//module.exports = bread;
+export default bread;

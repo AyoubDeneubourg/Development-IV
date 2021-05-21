@@ -5,4 +5,5 @@ const cookie = function ({ price, costPrice, sound, weight }) {
     this.weight = weight;
 };
 
-module.exports = cookie;
+//module.exports = cookie;
+export default cookie;
