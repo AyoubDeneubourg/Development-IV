@@ -1,23 +1,26 @@
 export default {
-    getProperties(pastry) {
-        if (pastry == "croissant") {
-            return {
-                price: 1.10,
-                costPrice: 0.20,
-                sound: "test1"
-            }
-        } else if (pastry == "bread") {
-            return {
-                price: 1.80,
-                costPrice: 0.110,
-                sound: "test2",
-            }
-        } else if (pastry == "cookie") {
-            return {
-                price: 0.90,
-                costPrice: 0.30,
-                sound: "test3",
-            }
-        }
+  getProperties(pastry, size) {
+    if (pastry == "croissant") {
+      return {
+        title: "Croissant",
+        price: 1.2,
+        costPrice: 0.2,
+        size: size === "XL" || size === "xl" ? "X-Large" : "X-Small",
+      };
+    } else if (pastry == "bread") {
+      return {
+        title: "Bread",
+        price: 1.8,
+        costPrice: 0.7,
+        size: size == "XL" || size === "xl" ? "X-Large" : "X-Small",
+      };
+    } else if (pastry === "cookie") {
+      return {
+        title: "Cookie",
+        price: 0.9,
+        costPrice: 0.15,
+        size: size === "XL" || size === "xl" ? "X-Large" : "X-Small",
+      };
     }
-}
+  },
+};

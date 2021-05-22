@@ -1,12 +1,32 @@
 package Models;
 
-public class Pastry {
+import Interfaces.SoundBehavior;
+import Patterns.Strategy.Grill;
+import Patterns.Strategy.MicroWave;
+
+public abstract class Pastry {
 
 
     private String name;
     private  double sellPrice;
-    private String sound;
     private  double cost;
+
+    protected SoundBehavior soundBehavior;
+
+    public Pastry() {
+        soundBehavior = new MicroWave();
+    }
+
+    public void eat() {
+        soundBehavior.eat();
+    }
+
+
+    public void setBehavior(SoundBehavior soundBehavior) {
+        if (soundBehavior != null)
+            this.soundBehavior = soundBehavior;
+    }
+
 
     public void setCost(double cost) {
         this.cost = cost;
@@ -31,19 +51,6 @@ public class Pastry {
     }
 
 
-    public void setSound(String sound) {
-        this.sound = sound;
-    }
-
-    private String getSound() {
-        return sound;
-    }
-
-    public void eatsProduct() {
-
-        System.out.println(getSound()+ " is the sound of" + getName());
-
-    }
 
 
 

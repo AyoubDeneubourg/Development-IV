@@ -10,7 +10,6 @@ public class Main {
         System.out.println(bakery.getName());
 
         Croissant croissant = new Croissant();
-        croissant.eatsProduct();
 
 
     }

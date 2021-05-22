@@ -8,23 +8,26 @@ import cookie from "./cookie.js";
 const pastry = { croissant, bread, cookie };
 
 function randomWeight(min, max) {
-    return Math.random() * (max - min) + min;
+  return Math.random() * (max - min) + min;
 }
 
 export default {
-    createPastry(type, amount, attributes) {
-        let arr = [];
-        for (let i = 0; i < amount; i++) {
-            const pastryType = pastry[type];
-            attributes.weight = randomWeight(10, 15).toFixed(2);
-            arr.push(new pastryType(attributes));
-        }
-        console.log(arr);
-        return arr;
-        //return new pastryType(attributes);
+  createPastry(type, amount, attributes) {
+    let arr = [];
+    console.log(attributes);
+    for (let i = 0; i < amount; i++) {
+      const pastryType = pastry[type];
+      attributes.weight =
+        attributes.size == "X-Small"
+          ? randomWeight(10, 15).toFixed(2)
+          : randomWeight(20, 25).toFixed(2);
+      arr.push(new pastryType(attributes));
     }
+    console.log(arr);
+    return arr;
+    //return new pastryType(attributes);
+  },
 };
-
 
 /* const myCroissant = pastryFactory.createPastry("croissant", 10, {
     price: 1.10,

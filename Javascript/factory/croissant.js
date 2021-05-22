@@ -1,8 +1,9 @@
-const croissant = function ({ price, costPrice, sound, weight }) {
-    this.price = price;
-    this.costPrice = costPrice;
-    this.sound = sound;
-    this.weight = weight;
+const croissant = function ({ title, price, costPrice, size, weight }) {
+  this.title = title;
+  this.price = price;
+  this.costPrice = costPrice;
+  this.size = size;
+  this.weight = weight;
 };
 
 //module.exports = croissant;

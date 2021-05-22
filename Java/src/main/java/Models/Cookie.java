@@ -10,7 +10,6 @@ public class Cookie extends Pastry {
         setName("Cookie");
         setPrice(1.20);
         setCost(-0.20);
-        setSound("Cook Cook!");
         this.cookieId = cookieIdCounter++;
 
     }

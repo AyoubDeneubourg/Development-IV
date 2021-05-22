@@ -3,6 +3,7 @@ package Patterns.Factory;
 import Models.*;
 import Patterns.Observer.SupplyGrabber;
 import Patterns.Observer.SupplyObserver;
+import Patterns.Strategy.Grill;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +79,7 @@ public class PastryFactory {
 
             for (int i = 0; i < amount; i++) {
                 Cookie cookie = new Cookie();
+                cookie.setBehavior(new Grill());
                 supplyGrabber.setStockCookie(cookie);
                 cookieList.add(cookie);
 

@@ -22,10 +22,13 @@ public class Client {
     public Wallet getWallet() {
         return wallet;
     }
-
-
     public void buyPastry(Pastry pastry) {
         this.purchasedItems.add(pastry);
+    }
+
+
+    public ArrayList<Pastry> getPurchasedItems() {
+        return purchasedItems;
     }
 
     @Override
