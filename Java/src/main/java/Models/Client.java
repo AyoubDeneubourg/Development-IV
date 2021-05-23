@@ -18,14 +18,13 @@ public class Client {
     public void setWalletAmount(double amount) {
         this.wallet.setAmount(amount);
     }
-
     public Wallet getWallet() {
         return wallet;
     }
+
     public void buyPastry(Pastry pastry) {
         this.purchasedItems.add(pastry);
     }
-
 
     public ArrayList<Pastry> getPurchasedItems() {
         return purchasedItems;
@@ -33,6 +32,6 @@ public class Client {
 
     @Override
     public String toString() {
-        return name + " has " + String.format("%.2f", wallet.getAmount()) + " in his wallet. He bought also " + purchasedItems;
+        return name + " has " + String.format("%.2f", wallet.getAmount()) + " in his wallet. He also bought " + purchasedItems;
     }
 }

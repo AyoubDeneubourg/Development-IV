@@ -6,7 +6,6 @@ public class Croissant extends Pastry {
     private static int croissantIdCounter = 0;
 
     public Croissant() {
-
         setName("Croissant");
         setPrice(0.90);
         setCost(-0.15);
@@ -15,9 +14,7 @@ public class Croissant extends Pastry {
 
     @Override
     public String toString() {
-      // return "Croissant" + hashCode();
         return "Croissant " + croissantId;
     }
-
 }
 

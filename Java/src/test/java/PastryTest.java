@@ -1,12 +1,10 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
 
-import Interfaces.SoundBehavior;
+import java.util.ArrayList;
 import Models.*;
 import Patterns.Factory.PastryFactory;
 import Patterns.Strategy.Grill;
 import Patterns.Strategy.MicroWave;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,108 +13,121 @@ public class PastryTest {
 
     PastryFactory pastryFactory = new PastryFactory();
 
-    @Test
+   @Test
     public void chronoTests() {
-        makePastry();
-        sellPastry();
+
+        givenPastries_WhenMakingPastries_ThenPastriesAreMade();
+        givenUnknownPastries_WhenMakingPastries_ThenThrowsError();
+        givenClient_WhenSellingPastries_ThenPastriesAreSold();
+        givenClient_WhenBakerSellsPastries_ThenPurchasedItemListOfClientIsGiven();
+        givenClient_WhenSellingUnknownPastries_ThenThrowsError();
+        givenClient_WhenSellingMorePastriesThanInStock_ThenThrowsError();
+        givenBrokeClient_WhenSellingToBrokeClient_ThenThrowsError();
+        givenPastry_WhenChangingPastryBehavior_ThenBehaviorIsChanged();
+
     }
 
     @Test
-    public void makePastry() { // Factory
+    public void givenPastries_WhenMakingPastries_ThenPastriesAreMade() { // Factory
 
-        List<Pastry> ma = pastryFactory.makePastry("Croissant", 10);
+        // make the pastries
+        pastryFactory.makePastry("Croissant", 10);
         pastryFactory.makePastry("Bread", 10);
         pastryFactory.makePastry("Cookie", 10);
-        // - 10.50
 
-
-        assertThrows(IllegalArgumentException.class, () -> pastryFactory.makePastry("Spaghetti", 5));
     }
-/*
-    0.90 0.15
-    1.80 0.70
-    1.20 0.20
-*/
 
     @Test
-    public void sellPastry() {
-        makePastry();
+    public void givenUnknownPastries_WhenMakingPastries_ThenThrowsError() {
+        // throws an error if tries to bake something unknown
+        assertThrows(IllegalArgumentException.class, () -> pastryFactory.makePastry("Spaghetti", 5));
+    }
+
+    @Test
+    public void givenClient_WhenSellingPastries_ThenPastriesAreSold() {
+        givenPastries_WhenMakingPastries_ThenPastriesAreMade();
+
+        //Create new client and gives him 5€ in wallet
         Client client = new Client();
         client.setName("Dirk");
         client.setWalletAmount(5);
 
-       pastryFactory.sellPastry("Croissant", 2, client);
-       pastryFactory.sellPastry("Bread", 1, client);
-
+        //Sell pastry to client
+        pastryFactory.sellPastry("Croissant", 2, client);
+        pastryFactory.sellPastry("Bread", 1, client);
         System.out.println(client);
 
+    }
 
+    @Test
+    public void givenClient_WhenBakerSellsPastries_ThenPurchasedItemListOfClientIsGiven() {
+        givenPastries_WhenMakingPastries_ThenPastriesAreMade();
+        Client client = new Client();
+        client.setName("Joni");
+        client.setWalletAmount(200);
 
+        //Sell pastry to client
+        pastryFactory.sellPastry("Croissant", 4, client);
+        pastryFactory.sellPastry("Bread", 2, client);
+
+        //Get A list of the items he bought
+       ArrayList purchasedItemOfClient = client.getPurchasedItems();
+       System.out.println(purchasedItemOfClient);
+
+    }
+
+    @Test
+    public void givenClient_WhenSellingUnknownPastries_ThenThrowsError() {
+        Client client = new Client();
+        client.setName("Dirk");
+        client.setWalletAmount(5);
+
+        //throws an error if tries to sell something unknown
+        assertThrows(IllegalArgumentException.class, () -> pastryFactory.sellPastry("Spaghetti", 5, client));
+
+    }
+
+    @Test
+    public void givenClient_WhenSellingMorePastriesThanInStock_ThenThrowsError() {
+        Client client = new Client();
+        client.setName("Dirk");
+        client.setWalletAmount(5);
+
+        //throws an error if tries too much amount of a pastry
+        assertThrows(IllegalArgumentException.class, () -> pastryFactory.sellPastry("Croissant", 500, client));
+
+    }
+
+    @Test
+    public void givenBrokeClient_WhenSellingToBrokeClient_ThenThrowsError() {
+
+       // Create new client and gives him 0€ in wallet
         Client clientTwo = new Client();
-        clientTwo.setName("Ayoub");
-        clientTwo.setWalletAmount(5);
+        clientTwo.setName("Maarten");
+        clientTwo.setWalletAmount(0);
 
-        pastryFactory.sellPastry("Croissant", 1, clientTwo);
-        pastryFactory.sellPastry("Cookie", 1, clientTwo);
-        pastryFactory.sellPastry("Bread", 3, clientTwo);
-
-
-
-       ArrayList<Pastry> purchasedItems = client.getPurchasedItems();
-       Pastry pastry = purchasedItems.get(0);
-       pastry.eat();
-       pastry.setBehavior(new Grill());
-       pastry.eat();
-       pastry.setBehavior(new MicroWave());
-       pastry.eat();
-
-        System.out.println(client);
-        System.out.println(clientTwo);
-
-
-
+        //throws error if client has not enough money
+        assertThrows(IllegalArgumentException.class, () -> pastryFactory.sellPastry("Croissant", 1, clientTwo));
 
     }
 
-@Test
-    public void strategy() {
+    @Test
+    public void givenPastry_WhenChangingPastryBehavior_ThenBehaviorIsChanged() {
+        Pastry pastry = new Bread();
+        pastry.eat();
 
+        // put in grill
+        pastry.setBehavior(new Grill());
+        pastry.eat();
 
-    pastryFactory.makePastry("Bread", 1);
+        // put in microwave
+        pastry.setBehavior(new MicroWave());
+        pastry.eat();
 
-
-
-    Client client = new Client();
-    client.setName("Dirk");
-    client.setWalletAmount(5);
-
-    pastryFactory.sellPastry("Bread", 1, client);
-
-
-    ArrayList<Pastry> purchasedItems = client.getPurchasedItems();
-    Pastry pastry = purchasedItems.get(0);
-
-    pastry.eat();
-
-    // zetten op de grill
-    pastry.setBehavior(new Grill());
-    pastry.eat();
-
-    // zetten in de microwave
-    pastry.setBehavior(new MicroWave());
-    pastry.eat();
-
+        Pastry pastryTwo = new Cookie();
+        pastryTwo.eat();
+    }
     }
 
 
 
-    // strategy if possible
-    // add individual client
-    // warning when you sell more than in stock
-    // change parameter names to realist
-    // error handling
-
-    // SRY = function qui fait ce que tu dis !
-    // DRY == don't repeat yourself
-
-}

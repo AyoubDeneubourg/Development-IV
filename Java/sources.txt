@@ -1,0 +1,11 @@
+https://www.youtube.com/watch?v=NZaXM67fxbs
+http://www.newthinktank.com/2012/09/singleton-design-pattern-tutorial/
+
+https://www.youtube.com/watch?v=ub0DXaeV6hA
+http://www.newthinktank.com/2012/09/factory-design-pattern-tutorial/
+
+https://www.youtube.com/watch?v=wiQdrH2YpT4
+http://www.newthinktank.com/2012/08/observer-design-pattern-tutorial/
+
+https://www.youtube.com/watch?v=-NCgRD9-C6o
+http://www.newthinktank.com/2012/08/strategy-design-pattern-tutorial/
