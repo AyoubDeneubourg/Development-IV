@@ -32,6 +32,39 @@ function bakePastry(array, pastry, amountOfPastries, inputSize) {
     showPastry(array, `all-${pastry}`);
 }
 
+function resetInputs() {
+    let form = document.getElementById("form");
+    form.reset();
+}
+
+function showPastry(elements, type) {
+    let pastryType = document.getElementById(type);
+    pastryType.innerText = elements.length;
+    elements.forEach((element) => {
+        pastryType.insertAdjacentHTML("beforeend", getPastryCard(element));
+    });
+}
+
+function getPastryCard(element) {
+    return `
+  <div id="card">
+    <div id="img-and-data">
+        <div id="img">
+        <img src="./assets/img/${element.title}.png">
+        </div>
+
+        <div id="data">
+            <p id="title">${element.title}</p>
+            <div id="size-and-weight">
+                <p id="size">${element.size}</p>
+                <p id="weight">${element.weight}</p>
+            </div>
+        </div>
+    </div>
+  </div>
+  `
+}
+
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
     bakePastry(allCroissants, "croissant", croissantInput.value, croissantSizeInput.value);
@@ -44,69 +77,4 @@ sortButton.addEventListener('click', () => {
     showPastry(bubbleSort(allCroissants), `all-croissant`);
     showPastry(bubbleSort(allBreads), `all-bread`);
     showPastry(bubbleSort(allCookies), `all-cookie`);
-})
-
-function resetInputs() {
-    let form = document.getElementById("form");
-    form.reset();
-}
-
-
-
-function showPastry(elements, type) {
-    let pastryType = document.getElementById(type);
-    pastryType.innerText = elements.length;
-    elements.forEach((element) => {
-        pastryType.insertAdjacentHTML("beforeend", getPastryCard(element));
-    });
-}
-
-function getPastryCard(element) {
-    /*   return `
-    /* <div id="card">
-    ${element.size}  ${element.title} die  ${element.weight}  gr weegt.
-    </div> `; */
-    return `
-  <div id="card">
-    <div id="img-and-data">
-
-    <div id="img">
-    <img src="./assets/img/${element.title}.png">
-    </div>
-
-    <div id="data">
-    <p id="title">${element.title}</p>
-    <div id="size-and-weight">
-    <p id="size">${element.size}</p>
-    <p id="weight">${element.weight}</p>
-    </div>
-   
-    </div>
-
-    </div>
-
-  </div>
-  `
-}
-
-function getWeightRange(weight) {
-    if (weight <= 11) {
-        console.log("weight 1" + weight);
-        return 10;
-    } else if (weight <= 11) {
-        console.log("weight 2" + weight);
-        return 11;
-    } else if (weight <= 12) {
-        console.log("weight 3" + weight);
-        return 12;
-    } else if (weight <= 13) {
-        console.log("weight 4" + weight);
-        return 13;
-    } else if (weight <= 14) {
-        console.log("weight 5" + weight);
-        return 14;
-    } else {
-        return 15;
-    }
-    console.log(arr);
-}
+});

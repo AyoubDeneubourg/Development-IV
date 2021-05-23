@@ -6,5 +6,4 @@ const croissant = function ({ title, price, costPrice, size, weight }) {
   this.weight = weight;
 };
 
-//module.exports = croissant;
 export default croissant;
