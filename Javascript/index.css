@@ -101,12 +101,14 @@ text-align: center;
   background: white;
 
 }
+
 #img {
   width: 50%;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 0;
 }
 
 img {

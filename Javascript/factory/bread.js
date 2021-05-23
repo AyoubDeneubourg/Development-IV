@@ -1,5 +1,5 @@
-const bread = function ({ title, price, costPrice, size, weight }) {
-  this.title = title;
+const bread = function ({ name, price, costPrice, size, weight }) {
+  this.name = name;
   this.price = price;
   this.costPrice = costPrice;
   this.size = size;
