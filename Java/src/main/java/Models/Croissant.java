@@ -10,7 +10,6 @@ public class Croissant extends Pastry {
         setName("Croissant");
         setPrice(0.90);
         setCost(-0.15);
-        setSound("Crunch crunch!");
         this.croissantId = croissantIdCounter++;
     }
 

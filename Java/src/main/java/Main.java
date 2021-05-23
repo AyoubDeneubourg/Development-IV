@@ -10,7 +10,6 @@ public class Main {
         System.out.println(bakery.getName());
 
         Croissant croissant = new Croissant();
-        croissant.eatsProduct();
 
 
     }
@@ -20,9 +19,5 @@ public class Main {
 
 
 //Singleton: Bakery =>
-
-
 //factory: products: bread, croissants, ...
-
-
 //observer: stock

@@ -3,7 +3,7 @@ package Patterns.Singleton;
 
 public class BakerySingleton{
 
-    private String name;
+    private String name = "DevelopmentBakery";
 
     private static final BakerySingleton instance = new BakerySingleton();
 

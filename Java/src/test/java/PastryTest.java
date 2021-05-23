@@ -1,7 +1,12 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
+import Interfaces.SoundBehavior;
 import Models.*;
 import Patterns.Factory.PastryFactory;
+import Patterns.Strategy.Grill;
+import Patterns.Strategy.MicroWave;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,32 +22,94 @@ public class PastryTest {
     }
 
     @Test
-    public void makePastry() {
+    public void makePastry() { // Factory
 
-        pastryFactory.makePastry("Croissant", 9);
-        pastryFactory.makePastry("Bread", 5);
+        List<Pastry> ma = pastryFactory.makePastry("Croissant", 10);
+        pastryFactory.makePastry("Bread", 10);
         pastryFactory.makePastry("Cookie", 10);
+        // - 10.50
+
 
         assertThrows(IllegalArgumentException.class, () -> pastryFactory.makePastry("Spaghetti", 5));
     }
+/*
+    0.90 0.15
+    1.80 0.70
+    1.20 0.20
+*/
 
     @Test
     public void sellPastry() {
         makePastry();
         Client client = new Client();
         client.setName("Dirk");
-        client.setWalletAmount(25);
+        client.setWalletAmount(5);
 
-        pastryFactory.sellPastry("Croissant", 5, client);
-        pastryFactory.sellPastry("Bread", 4, client);
-        pastryFactory.sellPastry("Cookie", 8, client);
+       pastryFactory.sellPastry("Croissant", 2, client);
+       pastryFactory.sellPastry("Bread", 1, client);
 
         System.out.println(client);
+
+
+
+        Client clientTwo = new Client();
+        clientTwo.setName("Ayoub");
+        clientTwo.setWalletAmount(5);
+
+        pastryFactory.sellPastry("Croissant", 1, clientTwo);
+        pastryFactory.sellPastry("Cookie", 1, clientTwo);
+        pastryFactory.sellPastry("Bread", 3, clientTwo);
+
+
+
+       ArrayList<Pastry> purchasedItems = client.getPurchasedItems();
+       Pastry pastry = purchasedItems.get(0);
+       pastry.eat();
+       pastry.setBehavior(new Grill());
+       pastry.eat();
+       pastry.setBehavior(new MicroWave());
+       pastry.eat();
+
+        System.out.println(client);
+        System.out.println(clientTwo);
+
+
+
+
+    }
+
+@Test
+    public void strategy() {
+
+
+    pastryFactory.makePastry("Bread", 1);
+
+
+
+    Client client = new Client();
+    client.setName("Dirk");
+    client.setWalletAmount(5);
+
+    pastryFactory.sellPastry("Bread", 1, client);
+
+
+    ArrayList<Pastry> purchasedItems = client.getPurchasedItems();
+    Pastry pastry = purchasedItems.get(0);
+
+    pastry.eat();
+
+    // zetten op de grill
+    pastry.setBehavior(new Grill());
+    pastry.eat();
+
+    // zetten in de microwave
+    pastry.setBehavior(new MicroWave());
+    pastry.eat();
 
     }
 
 
-    // add pain o chocolo
+
     // strategy if possible
     // add individual client
     // warning when you sell more than in stock

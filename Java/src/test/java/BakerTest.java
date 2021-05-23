@@ -1,3 +1,4 @@
+import Models.Pastry;
 import Patterns.Singleton.BakerySingleton;
 import org.junit.jupiter.api.Test;
 

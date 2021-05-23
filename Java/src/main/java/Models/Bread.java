@@ -10,7 +10,6 @@ public class Bread extends Pastry {
         setName("Bread");
         setPrice(1.80);
         setCost(-0.70);
-        setSound("Miam miam!");
         this.breadId = breadIdCounter++;
 
     }

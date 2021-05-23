@@ -1,8 +1,9 @@
 package Patterns.Factory;
 
 import Models.*;
-import Patterns.Observer.Supply.SupplyGrabber;
-import Patterns.Observer.Supply.SupplyObserver;
+import Patterns.Observer.SupplyGrabber;
+import Patterns.Observer.SupplyObserver;
+import Patterns.Strategy.Grill;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,8 @@ public class PastryFactory {
     SupplyObserver observer = new SupplyObserver(supplyGrabber);
 
 
-    public List<Pastry> sellPastry(String deletePastryType, int amount, Client client) {
+    public void sellPastry(String deletePastryType, int amount, Client client) {
+
 
         if (deletePastryType.equals("Croissant")) {
 
@@ -38,15 +40,17 @@ public class PastryFactory {
             }
             observer.printThePrices();
 
-        }
+        } else throw new IllegalArgumentException("You can't sell " + deletePastryType);
 
-        return null;
+
     }
 
     public List<Pastry> makePastry(String newPastryType, int amount) {
 
     ArrayList croissantList = new ArrayList<Pastry>();
     ArrayList breadList = new ArrayList<Pastry>();
+    ArrayList cookieList = new ArrayList<Pastry>();
+
 
         if (newPastryType.equals("Croissant")) {
 
@@ -75,12 +79,13 @@ public class PastryFactory {
 
             for (int i = 0; i < amount; i++) {
                 Cookie cookie = new Cookie();
+                cookie.setBehavior(new Grill());
                 supplyGrabber.setStockCookie(cookie);
-                breadList.add(cookie);
+                cookieList.add(cookie);
 
             }
             observer.printThePrices();
-            return breadList;
+            return cookieList;
         }
             else throw new IllegalArgumentException("You don't have the ingredients to cook " + newPastryType);
 
