@@ -5,10 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class BakerTest {
-
-
-
+public class BakeryTest {
 
     @Test
     public void makeBakery() {

@@ -33,6 +33,6 @@ public class Client {
 
     @Override
     public String toString() {
-        return name + " has " + String.format("%.2f", wallet.getAmount()) + " in his wallet. He bought also " + purchasedItems;
+        return name + " has " + String.format("%.2f", wallet.getAmount()) + " in his wallet. He also bought " + purchasedItems;
     }
 }
