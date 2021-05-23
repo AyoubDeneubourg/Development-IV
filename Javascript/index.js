@@ -1,127 +1,94 @@
 "use strict";
 
-//const pastryFactory = require("./factory/pastryFactory");
-
 import pastryFactory from "./factory/pastryFactory.js";
 import properties from "./factory/properties.js";
+import bubbleSort from "./algorithms/bubbleSort.js";
+
+/* VARIABLES */
 
 let croissantInput = document.getElementById("croissant");
 let breadInput = document.getElementById("bread");
 let cookieInput = document.getElementById("cookie");
 let submitButton = document.getElementById("submit-button");
-
 let croissantSizeInput = document.getElementById("croissantSize");
 let breadSizeInput = document.getElementById("breadSize");
 let cookieSizeInput = document.getElementById("cookieSize");
-
+let sortButton = document.getElementById('sort-button');
 let allCookies = [];
 let allBreads = [];
 let allCroissants = [];
 
-function bakePastries(
-  amountOfCroissants,
-  amountOfBreads,
-  amountOfCookies,
-  croissantSizeInput,
-  breadInput,
-  cookieSizeInput
-) {
-  allCroissants.push(
-    ...pastryFactory.createPastry(
-      "croissant",
-      amountOfCroissants,
-      properties.getProperties("croissant", croissantSizeInput)
-    )
-  );
+/* FUNCTIONS */
 
-  allBreads.push(
-    ...pastryFactory.createPastry(
-      "bread",
-      amountOfBreads,
-      properties.getProperties("bread", breadInput)
-    )
-  );
-  allCookies.push(
-    ...pastryFactory.createPastry(
-      "cookie",
-      amountOfCookies,
-      properties.getProperties("cookie", cookieSizeInput)
-    )
-  );
+//function which take the parameters to create a pastry, this function calls the pastry factory and a function to show the pastries
 
-  showUser(bubbleSort(allCroissants), "allCroissants");
-  showUser(bubbleSort(allBreads), "allBreads");
-  showUser(bubbleSort(allCookies), "allCookies");
-}
+function bakePastry(array, pastry, amountOfPastries, inputSize) {
+    array.push(
+        ...pastryFactory.createPastry(
+            pastry,
+            amountOfPastries,
+            properties.getProperties(pastry, inputSize)
+        )
+    );
+    showPastries(array, `all-${pastry}`);
+};
 
-submitButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  bakePastries(
-    croissantInput.value,
-    breadInput.value,
-    cookieInput.value,
-    croissantSizeInput.value,
-    breadSizeInput.value,
-    cookieSizeInput.value
-  );
-  resetInputs();
-});
+//function to reset the input fields
+//side effects
 
 function resetInputs() {
-  let form = document.getElementById("form");
-  form.reset();
-}
+    let form = document.getElementById("form");
+    form.reset();
+};
 
-function bubbleSort(unsortedPastry) {
-  unsortedPastry.forEach((pastry, index) => {
-    let nextPastry =
-      index === unsortedPastry.length - 1
-        ? unsortedPastry[index]
-        : unsortedPastry[index + 1];
-    if (pastry.weight > nextPastry.weight) {
-      let temp = unsortedPastry[index];
-      unsortedPastry[index] = unsortedPastry[index + 1];
-      unsortedPastry[index + 1] = temp;
-      bubbleSort(unsortedPastry);
-    }
-  });
+//Get html of a single pastry card
 
-  return unsortedPastry;
-}
-
-function showUser(elements, type) {
-  let pastryType = document.getElementById(type);
-  pastryType.innerText = elements.length;
-  elements.forEach((element) => {
-    pastryType.insertAdjacentHTML("beforeend", getPastryCard(element));
-  });
-}
-
-function getPastryCard(element) {
-  return `
+function getPastryCard(pastry) {
+    return `
   <div id="card">
-  ${element.size}  ${element.title} die  ${element.weight}  gr weegt.
-  </div>`;
-}
+    <div id="img-and-data">
+        <div id="img">
+        <img src="./assets/img/${pastry.name}.png">
+        </div>
 
-function getWeightRange(weight) {
-  if (weight <= 11) {
-    console.log("weight 1" + weight);
-    return 10;
-  } else if (weight <= 11) {
-    console.log("weight 2" + weight);
-    return 11;
-  } else if (weight <= 12) {
-    console.log("weight 3" + weight);
-    return 12;
-  } else if (weight <= 13) {
-    console.log("weight 4" + weight);
-    return 13;
-  } else if (weight <= 14) {
-    console.log("weight 5" + weight);
-    return 14;
-  } else {
-    return 15;
-  }
-  console.log(arr);
-}
+        <div id="data">
+            <p id="title">${pastry.name}</p>
+            <div id="size-and-weight">
+                <p id="size">${pastry.size}</p>
+                <p id="weight">${pastry.weight} gr</p>
+            </div>
+        </div>
+    </div>
+  </div>
+  `
+};
+
+//function that will insert the data to the DOM, it takes an pastriesArray and a type (of pastry)
+
+function showPastries(pastriesArray, type) {
+    let pastryType = document.getElementById(type);
+    pastryType.innerText = pastriesArray.length;
+    pastriesArray.forEach((pastry) => {
+        pastryType.insertAdjacentHTML("beforeend", getPastryCard(pastry));
+    });
+};
+
+/* EVENT LISTENERS */
+
+//Button to bake the pastries
+
+submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    bakePastry(allCroissants, "croissant", croissantInput.value, croissantSizeInput.value);
+    bakePastry(allBreads, "bread", breadInput.value, breadSizeInput.value);
+    bakePastry(allCookies, "cookie", cookieInput.value, cookieSizeInput.value);
+    resetInputs();
+});
+
+//Button to sort the pastries
+
+sortButton.addEventListener('click', () => {
+    showPastries(bubbleSort(allCroissants), `all-croissant`);
+    showPastries(bubbleSort(allBreads), `all-bread`);
+    showPastries(bubbleSort(allCookies), `all-cookie`);
+});

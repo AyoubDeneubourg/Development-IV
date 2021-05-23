@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <form id="form">
-      <div>
-        <input type="number" id="croissant" placeholder="Aantal croissants" />
-        <input type="text" id="croissantSize" placeholder="XS / XL" />
-      </div>
-      <div>
-        <input type="number" id="bread" placeholder="Aantal broodjes" />
-        <input type="text" id="breadSize" placeholder="XS / XL" />
-      </div>
-      <div>
-        <input type="number" id="cookie" placeholder="Aantal cookies" />
-        <input type="text" id="cookieSize" placeholder="XS / XL" />
-      </div>
-      <div>
-        <button type="submit" id="submit-button">BAKE</button>
-      </div>
-    </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <title>Document</title>
+</head>
 
-    <div id="allPastries">
-      <div id="allCroissants">0</div>
-      <div id="allBreads">0</div>
-      <div id="allCookies">0</div>
+<body>
+  <form id="form">
+    <div>
+      <input type="number" id="croissant" placeholder="Aantal croissants" />
+      <input type="text" id="croissantSize" placeholder="XS / XL" />
     </div>
+    <div>
+      <input type="number" id="bread" placeholder="Aantal broodjes" />
+      <input type="text" id="breadSize" placeholder="XS / XL" />
+    </div>
+    <div>
+      <input type="number" id="cookie" placeholder="Aantal cookies" />
+      <input type="text" id="cookieSize" placeholder="XS / XL" />
+    </div>
+    <div>
+      <button type="submit" id="submit-button" class="button">Bake</button>
+    </div>
+  </form>
+  <div id="sort-button-container">
+    <button id="sort-button" class="button">Sort</button>
+  </div>
 
-    <script type="module" src="index.js"></script>
-  </body>
+  <div id="allPastries">
+    <div id="all-croissant">0</div>
+    <div id="all-bread">0</div>
+    <div id="all-cookie">0</div>
+  </div>
+  <script type="module" src="index.js"></script>
+</body>
+
 </html>
