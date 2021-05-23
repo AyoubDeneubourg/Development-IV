@@ -6,7 +6,9 @@
 
 form {
   display: grid;
-  grid-template-columns: 25% 25% 25% 5%;
+  grid-template-columns: 25% 25% 25%;
+  justify-content: center;
+  position: relative;
 }
 
 form input {
@@ -29,10 +31,16 @@ form input[type="text"] {
   display: inline-block;
 }
 form div {
-  text-align: center;
+text-align: center;
 }
 
-form button {
+#submit-button {
+  position: absolute;
+  top:0.5vh;
+  right: 10vw;
+}
+
+.button {
   text-align: center;
   background-color: rgb(0, 60, 109);
   box-shadow: 1px 1px 8px 3px rgb(17, 17, 17);
@@ -42,25 +50,33 @@ form button {
   outline: none;
   border-radius: 3px;
   color: white;
+
 }
 
-form button:hover {
+.button:hover {
   cursor: pointer;
   transition: 0.5s;
   border: solid 1px white;
 }
 
+#sort-button-container {
+  text-align: center;
+  margin: 30px;
+}
+
 #allPastries {
   display: grid;
   grid-template-columns: 25% 25% 25%;
+  justify-content: center;
 }
 
 #card {
   background-color: white;
   color: black !important;
-  padding: 15px;
-  margin: auto;
+  padding: 5px;
+  margin: 10px;
   box-shadow: 1px 1px 2px 3px rgb(17, 17, 17);
+
 }
 
 #card:nth-child(1) {
@@ -69,13 +85,61 @@ form button:hover {
 #card:last-child {
   border-radius: 0 0 5px 5px;
 }
-#allCookies,
-#allCroissants,
-#allBreads {
+#all-cookie,
+#all-croissant,
+#all-bread {
   color: white;
   margin: auto;
   text-align: center;
   border-radius: 50px;
   margin-top: 15px;
+  width: 70%;
+}
+
+#img-and-data {
+  display: flex;
+  background: white;
+
+}
+#img {
   width: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+ width: 100px;
+ background: white;
+ 
+}
+
+#data {
+  background: white;
+  width: 50%;
+}
+
+p {
+  background: white;
+}
+
+#size-and-weight {
+  display: flex;
+  background: white;
+  justify-content: space-between;
+
+}
+
+#title {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+#size, #weight {
+margin-bottom: 0;
+}
+
+#weight {
+  padding-right: 5px;
 }
