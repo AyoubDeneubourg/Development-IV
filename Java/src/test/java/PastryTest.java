@@ -124,8 +124,9 @@ public class PastryTest {
         pastry.setBehavior(new MicroWave());
         pastry.eat();
 
+        Pastry pastryTwo = new Cookie();
+        pastryTwo.eat();
     }
-
     }
 
 

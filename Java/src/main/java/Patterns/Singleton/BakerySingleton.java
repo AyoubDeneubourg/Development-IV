@@ -9,7 +9,6 @@ public class BakerySingleton{
 
     private static final BakerySingleton instance = new BakerySingleton();
 
-
     private BakerySingleton() {
 
     }

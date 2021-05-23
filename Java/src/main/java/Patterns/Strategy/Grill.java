@@ -6,6 +6,5 @@ public class Grill implements SoundBehavior {
     @Override
     public void eat() {
         System.out.println("Crunch crunch!");
-
     }
 }

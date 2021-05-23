@@ -10,7 +10,6 @@ import java.util.List;
 
 public class PastryFactory {
 
-
     SupplyGrabber supplyGrabber = new SupplyGrabber();
     SupplyObserver observer = new SupplyObserver(supplyGrabber);
 
@@ -18,15 +17,11 @@ public class PastryFactory {
 
     public void sellPastry(String deletePastryType, int amount, Client client) {
 
-
         if (deletePastryType.equals("Croissant")) {
             for (int i = 0; i < amount; i++) {
                 supplyGrabber.sellCroissant(client);
             }
             observer.printThePrices();
-          // supplyGrabber.notifyObserver();
-
-
 
         } else if (deletePastryType.equals("Bread")) {
 
@@ -43,8 +38,6 @@ public class PastryFactory {
             observer.printThePrices();
 
         } else throw new IllegalArgumentException("You can't sell " + deletePastryType);
-
-
     }
 
     //function that will check which input it is receiving, then it will loop through amount of pastries the baker wants to bake.
@@ -67,14 +60,12 @@ public class PastryFactory {
             observer.printThePrices();
             return croissantList;
 
-
         } else if (newPastryType.equals("Bread")) {
 
             for (int i = 0; i < amount; i++) {
                 Bread bread = new Bread();
                 supplyGrabber.setStockBread(bread);
                 breadList.add(bread);
-
             }
             observer.printThePrices();
             return breadList;
@@ -83,15 +74,12 @@ public class PastryFactory {
 
             for (int i = 0; i < amount; i++) {
                 Cookie cookie = new Cookie();
-                cookie.setBehavior(new Grill());
                 supplyGrabber.setStockCookie(cookie);
                 cookieList.add(cookie);
-
             }
             observer.printThePrices();
             return cookieList;
         }
             else throw new IllegalArgumentException("You don't have the ingredients to cook " + newPastryType);
-
     }
 }

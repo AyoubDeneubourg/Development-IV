@@ -6,12 +6,10 @@ public class Bread extends Pastry {
     private static int breadIdCounter = 0;
 
     public Bread() {
-
         setName("Bread");
         setPrice(1.80);
         setCost(-0.70);
         this.breadId = breadIdCounter++;
-
     }
 
     @Override
@@ -19,5 +17,4 @@ public class Bread extends Pastry {
         // return "Bread" + hashCode();
         return "Bread " + breadId;
     }
-
 }

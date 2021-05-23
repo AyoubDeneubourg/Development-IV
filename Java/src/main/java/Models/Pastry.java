@@ -6,7 +6,6 @@ import Patterns.Strategy.MicroWave;
 
 public abstract class Pastry {
 
-
     private String name;
     private  double sellPrice;
     private  double cost;
@@ -21,12 +20,10 @@ public abstract class Pastry {
         soundBehavior.eat();
     }
 
-
     public void setBehavior(SoundBehavior soundBehavior) {
         if (soundBehavior != null)
             this.soundBehavior = soundBehavior;
     }
-
 
     public void setCost(double cost) {
         this.cost = cost;
@@ -34,7 +31,6 @@ public abstract class Pastry {
     public  double getCost() {
         return cost;
     }
-
 
     public void setName(String name) {
         this.name = name;
@@ -49,10 +45,5 @@ public abstract class Pastry {
     public  double getPrice() {
         return sellPrice;
     }
-
-
-
-
-
 
 }

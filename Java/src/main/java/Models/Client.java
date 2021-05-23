@@ -18,14 +18,13 @@ public class Client {
     public void setWalletAmount(double amount) {
         this.wallet.setAmount(amount);
     }
-
     public Wallet getWallet() {
         return wallet;
     }
+
     public void buyPastry(Pastry pastry) {
         this.purchasedItems.add(pastry);
     }
-
 
     public ArrayList<Pastry> getPurchasedItems() {
         return purchasedItems;

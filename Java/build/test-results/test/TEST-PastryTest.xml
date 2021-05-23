@@ -1,80 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PastryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-23T18:55:03" hostname="DESKTOP-3IPGO8N" time="0.046">
+<testsuite name="PastryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-23T19:17:55" hostname="DESKTOP-3IPGO8N" time="0.017">
   <properties/>
-  <testcase name="chronoTests()" classname="PastryTest" time="0.046"/>
+  <testcase name="givenPastry_WhenChangingPastryBehavior_ThenBehaviorIsChanged()" classname="PastryTest" time="0.017"/>
   <system-out><![CDATA[New Observer 1
-?[33m1
-?[33mStock Croissant: [Croissant 1, Croissant 2, Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10]
-?[33mStock Bread: []
-?[33mStock Cookie:[]
-?[33mBakery wallet has -1.50
-?[33m1
-?[33mStock Croissant: [Croissant 1, Croissant 2, Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10]
-?[33mStock Bread: [Bread 1, Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10]
-?[33mStock Cookie:[]
-?[33mBakery wallet has -8.50
-?[33m1
-?[33mStock Croissant: [Croissant 1, Croissant 2, Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10]
-?[33mStock Bread: [Bread 1, Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10]
-?[33mBakery wallet has -10.50
-?[33m1
-?[33mStock Croissant: [Croissant 1, Croissant 2, Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10, Croissant 11, Croissant 12, Croissant 13, Croissant 14, Croissant 15, Croissant 16, Croissant 17, Croissant 18, Croissant 19, Croissant 20]
-?[33mStock Bread: [Bread 1, Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10]
-?[33mBakery wallet has -12.00
-?[33m1
-?[33mStock Croissant: [Croissant 1, Croissant 2, Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10, Croissant 11, Croissant 12, Croissant 13, Croissant 14, Croissant 15, Croissant 16, Croissant 17, Croissant 18, Croissant 19, Croissant 20]
-?[33mStock Bread: [Bread 1, Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10, Bread 11, Bread 12, Bread 13, Bread 14, Bread 15, Bread 16, Bread 17, Bread 18, Bread 19, Bread 20]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10]
-?[33mBakery wallet has -19.00
-?[33m1
-?[33mStock Croissant: [Croissant 1, Croissant 2, Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10, Croissant 11, Croissant 12, Croissant 13, Croissant 14, Croissant 15, Croissant 16, Croissant 17, Croissant 18, Croissant 19, Croissant 20]
-?[33mStock Bread: [Bread 1, Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10, Bread 11, Bread 12, Bread 13, Bread 14, Bread 15, Bread 16, Bread 17, Bread 18, Bread 19, Bread 20]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10, Cookie 11, Cookie 12, Cookie 13, Cookie 14, Cookie 15, Cookie 16, Cookie 17, Cookie 18, Cookie 19, Cookie 20]
-?[33mBakery wallet has -21.00
-?[33m1
-?[33mStock Croissant: [Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10, Croissant 11, Croissant 12, Croissant 13, Croissant 14, Croissant 15, Croissant 16, Croissant 17, Croissant 18, Croissant 19, Croissant 20]
-?[33mStock Bread: [Bread 1, Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10, Bread 11, Bread 12, Bread 13, Bread 14, Bread 15, Bread 16, Bread 17, Bread 18, Bread 19, Bread 20]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10, Cookie 11, Cookie 12, Cookie 13, Cookie 14, Cookie 15, Cookie 16, Cookie 17, Cookie 18, Cookie 19, Cookie 20]
-?[33mBakery wallet has -19.20
-?[33m1
-?[33mStock Croissant: [Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10, Croissant 11, Croissant 12, Croissant 13, Croissant 14, Croissant 15, Croissant 16, Croissant 17, Croissant 18, Croissant 19, Croissant 20]
-?[33mStock Bread: [Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10, Bread 11, Bread 12, Bread 13, Bread 14, Bread 15, Bread 16, Bread 17, Bread 18, Bread 19, Bread 20]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10, Cookie 11, Cookie 12, Cookie 13, Cookie 14, Cookie 15, Cookie 16, Cookie 17, Cookie 18, Cookie 19, Cookie 20]
-?[33mBakery wallet has -17.40
-Dirk has 1.40 in his wallet. He also bought [Croissant 1, Croissant 2, Bread 1]
-?[33m1
-?[33mStock Croissant: [Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10, Croissant 11, Croissant 12, Croissant 13, Croissant 14, Croissant 15, Croissant 16, Croissant 17, Croissant 18, Croissant 19, Croissant 20, Croissant 21, Croissant 22, Croissant 23, Croissant 24, Croissant 25, Croissant 26, Croissant 27, Croissant 28, Croissant 29, Croissant 30]
-?[33mStock Bread: [Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10, Bread 11, Bread 12, Bread 13, Bread 14, Bread 15, Bread 16, Bread 17, Bread 18, Bread 19, Bread 20]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10, Cookie 11, Cookie 12, Cookie 13, Cookie 14, Cookie 15, Cookie 16, Cookie 17, Cookie 18, Cookie 19, Cookie 20]
-?[33mBakery wallet has -18.90
-?[33m1
-?[33mStock Croissant: [Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10, Croissant 11, Croissant 12, Croissant 13, Croissant 14, Croissant 15, Croissant 16, Croissant 17, Croissant 18, Croissant 19, Croissant 20, Croissant 21, Croissant 22, Croissant 23, Croissant 24, Croissant 25, Croissant 26, Croissant 27, Croissant 28, Croissant 29, Croissant 30]
-?[33mStock Bread: [Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10, Bread 11, Bread 12, Bread 13, Bread 14, Bread 15, Bread 16, Bread 17, Bread 18, Bread 19, Bread 20, Bread 21, Bread 22, Bread 23, Bread 24, Bread 25, Bread 26, Bread 27, Bread 28, Bread 29, Bread 30]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10, Cookie 11, Cookie 12, Cookie 13, Cookie 14, Cookie 15, Cookie 16, Cookie 17, Cookie 18, Cookie 19, Cookie 20]
-?[33mBakery wallet has -25.90
-?[33m1
-?[33mStock Croissant: [Croissant 3, Croissant 4, Croissant 5, Croissant 6, Croissant 7, Croissant 8, Croissant 9, Croissant 10, Croissant 11, Croissant 12, Croissant 13, Croissant 14, Croissant 15, Croissant 16, Croissant 17, Croissant 18, Croissant 19, Croissant 20, Croissant 21, Croissant 22, Croissant 23, Croissant 24, Croissant 25, Croissant 26, Croissant 27, Croissant 28, Croissant 29, Croissant 30]
-?[33mStock Bread: [Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10, Bread 11, Bread 12, Bread 13, Bread 14, Bread 15, Bread 16, Bread 17, Bread 18, Bread 19, Bread 20, Bread 21, Bread 22, Bread 23, Bread 24, Bread 25, Bread 26, Bread 27, Bread 28, Bread 29, Bread 30]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10, Cookie 11, Cookie 12, Cookie 13, Cookie 14, Cookie 15, Cookie 16, Cookie 17, Cookie 18, Cookie 19, Cookie 20, Cookie 21, Cookie 22, Cookie 23, Cookie 24, Cookie 25, Cookie 26, Cookie 27, Cookie 28, Cookie 29, Cookie 30]
-?[33mBakery wallet has -27.90
-?[33m1
-?[33mStock Croissant: [Croissant 7, Croissant 8, Croissant 9, Croissant 10, Croissant 11, Croissant 12, Croissant 13, Croissant 14, Croissant 15, Croissant 16, Croissant 17, Croissant 18, Croissant 19, Croissant 20, Croissant 21, Croissant 22, Croissant 23, Croissant 24, Croissant 25, Croissant 26, Croissant 27, Croissant 28, Croissant 29, Croissant 30]
-?[33mStock Bread: [Bread 2, Bread 3, Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10, Bread 11, Bread 12, Bread 13, Bread 14, Bread 15, Bread 16, Bread 17, Bread 18, Bread 19, Bread 20, Bread 21, Bread 22, Bread 23, Bread 24, Bread 25, Bread 26, Bread 27, Bread 28, Bread 29, Bread 30]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10, Cookie 11, Cookie 12, Cookie 13, Cookie 14, Cookie 15, Cookie 16, Cookie 17, Cookie 18, Cookie 19, Cookie 20, Cookie 21, Cookie 22, Cookie 23, Cookie 24, Cookie 25, Cookie 26, Cookie 27, Cookie 28, Cookie 29, Cookie 30]
-?[33mBakery wallet has -24.30
-?[33m1
-?[33mStock Croissant: [Croissant 7, Croissant 8, Croissant 9, Croissant 10, Croissant 11, Croissant 12, Croissant 13, Croissant 14, Croissant 15, Croissant 16, Croissant 17, Croissant 18, Croissant 19, Croissant 20, Croissant 21, Croissant 22, Croissant 23, Croissant 24, Croissant 25, Croissant 26, Croissant 27, Croissant 28, Croissant 29, Croissant 30]
-?[33mStock Bread: [Bread 4, Bread 5, Bread 6, Bread 7, Bread 8, Bread 9, Bread 10, Bread 11, Bread 12, Bread 13, Bread 14, Bread 15, Bread 16, Bread 17, Bread 18, Bread 19, Bread 20, Bread 21, Bread 22, Bread 23, Bread 24, Bread 25, Bread 26, Bread 27, Bread 28, Bread 29, Bread 30]
-?[33mStock Cookie:[Cookie 1, Cookie 2, Cookie 3, Cookie 4, Cookie 5, Cookie 6, Cookie 7, Cookie 8, Cookie 9, Cookie 10, Cookie 11, Cookie 12, Cookie 13, Cookie 14, Cookie 15, Cookie 16, Cookie 17, Cookie 18, Cookie 19, Cookie 20, Cookie 21, Cookie 22, Cookie 23, Cookie 24, Cookie 25, Cookie 26, Cookie 27, Cookie 28, Cookie 29, Cookie 30]
-?[33mBakery wallet has -20.70
-[Croissant 3, Croissant 4, Croissant 5, Croissant 6, Bread 2, Bread 3]
-
-
 Miam miam!
 Crunch crunch!
 Miam miam!
+Crunch crunch!
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

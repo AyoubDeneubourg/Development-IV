@@ -153,7 +153,6 @@ public class SupplyGrabber implements Subject {
         else {
             String productName = getProductsName(productStock);
            throw new IllegalArgumentException(ANSI_GREEN + "Sorry, the bakery '" + BakerySingleton.getInstance().getName() + "' has no more " + productName  + " available");
-          //  return false;
         }
     }
 
